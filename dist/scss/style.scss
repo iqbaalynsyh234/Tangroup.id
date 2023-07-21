@@ -1,0 +1,51 @@
+@import "bourbon/bourbon";
+
+$main-color : #d5d5d5;
+$white      : #ffffff;
+$color-font : #000000;
+
+html, body{
+	height: 100%;
+} 
+#wrapper {
+	height: inherit;
+}
+#footer {
+	background: $main-color;
+}
+#header {
+	background-color: $white;
+	&.fixed-top{
+		@include transition(all 0.3s);
+		&.nav-on-up{
+			top:0px;
+		}
+		&.nav-on-down{
+			top:-35px;
+		}
+	}
+}
+.header-color{
+	background-color: $color-font;
+	color: #white;
+	a{
+		color: $white;
+	}
+}
+#content {
+	height: 100%;
+	.full-height{
+		padding-top: 50px;
+		height: inherit;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}
+
+
+//responsive
+@import "tablet.scss";
+@import "mobile.scss";
+@import "small_mobile.scss";
+@import "extrasmall_mobile.scss"; 
